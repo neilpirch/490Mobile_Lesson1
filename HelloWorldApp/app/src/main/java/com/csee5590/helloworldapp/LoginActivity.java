@@ -21,6 +21,8 @@ import com.facebook.login.widget.LoginButton;
 import java.util.Arrays;
 
 public class LoginActivity extends AppCompatActivity {
+    CallbackManager callbackManager = CallbackManager.Factory.create();
+    private static final String EMAIL = "email";
 
 
     @Override
@@ -28,9 +30,7 @@ public class LoginActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
 
-        callbackManager = CallbackManager.Factory.create();
 
-        private static final String EMAIL = "email";
 
         LoginButton loginButton = (LoginButton) findViewById(R.id.login_button);
         loginButton.setReadPermissions(Arrays.asList(EMAIL));
